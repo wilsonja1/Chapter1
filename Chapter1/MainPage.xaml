@@ -59,8 +59,20 @@
             <ContentControl Template="{StaticResource EnemyTemplate}" Content="ContentControl"/>
         </StackPanel>
         <ProgressBar Grid.Column="1" Grid.Row="2" Height="20"/>
-        <Canvas x:Name="playArea" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" FocusVisualPrimaryBrush="#FF9C1010" Grid.ColumnSpan="3"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="554,72,0,0" Text="{StaticResource AppName}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Canvas x:Name="playArea" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" FocusVisualPrimaryBrush="#FF9C1010" Grid.ColumnSpan="3">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <StackPanel x:Name="Human" Orientation="Vertical" Canvas.Left="105" Canvas.Top="125" RenderTransformOrigin="0.5,-0.12">
+                <Ellipse HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Margin="0,0,0,0" Fill="#FFF3EEEE" Width="20"/>
+                <Rectangle Height="75" HorizontalAlignment="Left" VerticalAlignment="Center" Fill="White" FocusVisualPrimaryBrush="#FF110202" Stroke="Black" Width="10" Margin="0,0,0,0"/>
+            </StackPanel>
+            <TextBox x:Name="gameOverText" Canvas.Left="525" Canvas.Top="265" Text="Game Over" FontFamily="Arial Black" FontSize="72" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Canvas>
+        <TextBlock Grid.Column="1" Margin="212,0,0,0" Text="{StaticResource AppName}" TextWrapping="Wrap" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold"/>
 
         <!-- Back button and page title -->
     </Grid>
