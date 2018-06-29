@@ -58,7 +58,7 @@
             <TextBlock Text="Avoid These" TextWrapping="Wrap" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="22"/>
             <ContentControl Template="{StaticResource EnemyTemplate}" Content="ContentControl"/>
         </StackPanel>
-        <ProgressBar Grid.Column="1" Grid.Row="2" Height="20"/>
+        <ProgressBar x:Name="progressBar" Grid.Column="1" Grid.Row="2" Height="20"/>
         <Canvas x:Name="playArea" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Grid.ColumnSpan="3">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
