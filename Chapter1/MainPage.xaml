@@ -53,7 +53,7 @@
             <RowDefinition/>
             <RowDefinition Height="160"/>
         </Grid.RowDefinitions>
-        <Button Content="Start!" HorizontalAlignment="Center" Margin="0,48,0,0" Grid.Row="2" VerticalAlignment="Center"/>
+        <Button x:Name="startButton" Content="Start!" HorizontalAlignment="Center" Margin="0,48,0,0" Grid.Row="2" VerticalAlignment="Center"/>
         <StackPanel Orientation="Vertical" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center">
             <TextBlock Text="Avoid These" TextWrapping="Wrap" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="22"/>
             <ContentControl Template="{StaticResource EnemyTemplate}" Content="ContentControl"/>
@@ -68,9 +68,20 @@
             </Canvas.Background>
             <StackPanel x:Name="Human" Orientation="Vertical" Canvas.Left="105" Canvas.Top="125" RenderTransformOrigin="0.5,-0.12">
                 <Ellipse HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Margin="0,0,0,0" Fill="#FFF3EEEE" Width="20"/>
-                <Rectangle Height="75" HorizontalAlignment="Left" VerticalAlignment="Center" Fill="White" FocusVisualPrimaryBrush="#FF110202" Stroke="Black" Width="10" Margin="0,0,0,0"/>
+                <Rectangle Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="White" FocusVisualPrimaryBrush="#FF110202" Stroke="Black" Width="10" RenderTransformOrigin="2,0.467" RadiusX="0" RadiusY="0"/>
             </StackPanel>
             <TextBox x:Name="gameOverText" Canvas.Left="525" Canvas.Top="265" Text="Game Over" FontFamily="Arial Black" FontSize="72" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Rectangle x:Name="target" HorizontalAlignment="Stretch" Height="50" Canvas.Left="1095" Canvas.Top="235" VerticalAlignment="Stretch" Width="50" RenderTransformOrigin="0.5,0.5" FocusVisualPrimaryBrush="#FF40B484">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF6E3874" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.RenderTransform>
+                    <CompositeTransform Rotation="45"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
         </Canvas>
         <TextBlock Grid.Column="1" Margin="212,0,0,0" Text="{StaticResource AppName}" TextWrapping="Wrap" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold"/>
 
