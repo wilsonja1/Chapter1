@@ -12,6 +12,11 @@
         <x:String x:Key="AppName">Save the Humans</x:String>
         <ControlTemplate x:Key="EnemyTemplate" TargetType="ContentControl">
             <Grid>
+                <Ellipse Height="100" Margin="0,0,0,0" Width="100" FocusVisualPrimaryBrush="#FFFF0404" Stroke="#FFFD0303" Fill="#FFEE0F0F"/>
+            </Grid>
+        </ControlTemplate>
+        <!--<ControlTemplate x:Key="EnemyTemplate" TargetType="ContentControl">
+            <Grid>
                 <Ellipse Fill="Gray" Height="100" Stroke="Black" Width="75"/>
                 <Ellipse Fill="Black" HorizontalAlignment="Center" Height="35" Stroke="Black" VerticalAlignment="Top" Width="25" Margin="40,20,70,6" RenderTransformOrigin="0.5,0.5">
                     <Ellipse.RenderTransform>
@@ -24,7 +29,7 @@
                     </Ellipse.RenderTransform>
                 </Ellipse>
             </Grid>
-        </ControlTemplate>
+        </ControlTemplate>-->
     </Page.Resources>
 
     <!--
@@ -51,10 +56,10 @@
         <Button Content="Start!" HorizontalAlignment="Center" Margin="0,48,0,0" Grid.Row="2" VerticalAlignment="Center"/>
         <StackPanel Orientation="Vertical" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center">
             <TextBlock Text="Avoid These" TextWrapping="Wrap" Style="{StaticResource SubheaderTextBlockStyle}" FontSize="22"/>
-            <ContentControl Content="ContentControl"/>
+            <ContentControl Template="{StaticResource EnemyTemplate}" Content="ContentControl"/>
         </StackPanel>
-        <ProgressBar Grid.Column="1" HorizontalAlignment="Left" Height="50" Margin="389,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="231"/>
-        <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="590,285,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+        <ProgressBar Grid.Column="1" Grid.Row="2" Height="20"/>
+        <Canvas x:Name="playArea" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" FocusVisualPrimaryBrush="#FF9C1010" Grid.ColumnSpan="3"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="554,72,0,0" Text="{StaticResource AppName}" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
         <!-- Back button and page title -->
